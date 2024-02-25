@@ -41,6 +41,37 @@
                 </li>
               @endif
 
+            @if (check_authorized("002D"))
+              <li
+                  class="sidebar-item {{ request()->segment(2) == 'product' ? 'active' : '' }}">
+                  <a href="{{ route('app.products.index') }}" class='sidebar-link'>
+                    <i class="bi bi-shop"></i>
+                      <span>Master Product</span>
+                  </a>
+              </li>
+            @endif
+
+            @if (check_authorized("002D"))
+              <li
+                  class="sidebar-item {{ request()->segment(2) == 'transaksi' ? 'active' : '' }}">
+                  <a href="{{ route('app.transaksi.index') }}" class='sidebar-link'>
+                    <i class="bi bi-basket"></i>
+                      <span>Transaksi</span>
+                  </a>
+              </li>
+            @endif
+
+            @if (check_authorized("002D"))
+              <li
+                  class="sidebar-item {{ request()->segment(2) == 'riwayat-transaksi' ? 'active' : '' }}">
+                  <a href="{{ route('app.transaksi.get') }}" class='sidebar-link'>
+                    <i class="bi bi-journal-text"></i>
+                      <span>Riwayat Transaksi</span>
+                  </a>
+              </li>
+            @endif
+
+
               @if (check_authorized("005S"))
                 <li
                     class="sidebar-item {{ request()->segment(2) == 'settings' ? 'active' : '' }}">
@@ -50,7 +81,6 @@
                     </a>
                 </li>
               @endif
-
 
           </ul>
       </div>

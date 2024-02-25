@@ -18,6 +18,8 @@
   <link rel="shortcut icon" href="{{ asset('assets/images/logo/favicon.png?v=') . random_string(7) }}" type="image/png">
   @stack("style")
 
+  @yield('js')
+
 </head>
 
 <body>
